@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="308dp"
+        android:layout_height="78dp"
+        android:layout_marginBottom="152dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="114dp"
+            android:layout_height="wrap_content"
+            android:text="Fahrenheit" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="99dp"
+            android:layout_height="wrap_content"
+            android:text="Kelvin" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="96dp"
+            android:layout_height="wrap_content"
+            android:text="Celsius" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="334dp"
+        android:layout_height="71dp"
+        android:text="Temperature converter"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.053" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/textInputEditText"
+        android:layout_width="297dp"
+        android:layout_height="42dp"
+        android:hint="your temperature"
+        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="308dp"
+        android:layout_height="78dp"
+        android:layout_marginBottom="416dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="116dp"
+            android:layout_height="wrap_content"
+            android:text="Fahrenheit" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="106dp"
+            android:layout_height="wrap_content"
+            android:text="Kelvin" />
+
+        <RadioButton
+            android:id="@+id/radioButton"
+            android:layout_width="139dp"
+            android:layout_height="wrap_content"
+            android:text="Celsius" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Input temperature"
+        app:layout_constraintBottom_toTopOf="@+id/textInputEditText"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:layout_editor_absoluteX="72dp" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Output temperature"
+        tools:layout_editor_absoluteX="72dp"
+        tools:layout_editor_absoluteY="405dp" />
+
+    <Button
+        android:id="@+id/ConvertButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        tools:layout_editor_absoluteX="160dp"
+        tools:layout_editor_absoluteY="335dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
