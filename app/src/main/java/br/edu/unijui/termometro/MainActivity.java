@@ -77,11 +77,24 @@ public class MainActivity extends AppCompatActivity {
                 Integer _temp = Integer.valueOf(temperature);
 
                 if (InputCelsius.isChecked()) {
+                    _temp = (((_temp * 5 )/9) + 32;
+                    return _temp.toString();
+
+                } else if (InputKelvin.isChecked()) {
+                    _temp = ((_temp - 273) * 1.8) + 32;
+                    return _temp.toString();
+                } else return temperature;
+            };
+
+            public String toCelsius(String temperature) {
+                Integer _temp = Integer.valueOf(temperature);
+
+                if (InputFahrenheit.isChecked()) {
                     _temp = (((_temp - 32) * 5 )/9);
                     return _temp.toString();
 
-                } else if (InputFahrenheit.isChecked()) {
-                    _temp = (((_temp - 32) * 9) /5 ) + 273;
+                } else if (InputKelvin.isChecked()) {
+                    _temp = _temp - 273;
                     return _temp.toString();
                 } else return temperature;
             };
