@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class MainActivity extends AppCompatActivity {
-
     Button ConvertButton;
     TextInputEditText TemperatureInput;
     TextView OutputTemperature;
@@ -42,22 +41,22 @@ public class MainActivity extends AppCompatActivity {
         OutputCelsius = findViewById(R.id.outputCelsius);
         OutputKelvin = findViewById(R.id.outputKelvin);
 
-
         ConvertButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 String valueInput = TemperatureInput.getText().toString();
 
-                if (valueInput == "") return;
-                
+                if (valueInput == "" || valueInput == null) {
+                    OutputTemperature.setText("");
+                    return;
+                }
+
                 if (OutputKelvin.isChecked()) {
                     OutputTemperature.setText(toKelvin(valueInput));
                 } else if (OutputCelsius.isChecked()) {
-                    
+                    OutputTemperature.setText(toCelsius(valueInput));
                 } else if (OutputFahrenheit.isChecked()) {
-                    
+                    OutputTemperature.setText(toFahrenheit(valueInput));
                 }
-
-                // Log.d("MainActivity", valueInput.toString());
             }
 
             public String toKelvin(String temperature) {
@@ -68,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     return _temp.toString();
 
                 } else if (InputFahrenheit.isChecked()) {
-                    _temp = (((_temp - 32) * 9) /5 ) + 273;
+                    _temp = (((_temp - 32) * 5) /9 ) + 273;
                     return _temp.toString();
                 } else return temperature;
             };
@@ -77,11 +76,11 @@ public class MainActivity extends AppCompatActivity {
                 Integer _temp = Integer.valueOf(temperature);
 
                 if (InputCelsius.isChecked()) {
-                    _temp = (((_temp * 5 )/9) + 32;
+                    _temp = ((_temp * 9)/5) + 32;
                     return _temp.toString();
 
                 } else if (InputKelvin.isChecked()) {
-                    _temp = ((_temp - 273) * 1.8) + 32;
+                    _temp = (((_temp - 273) * 9)/5 + 32);
                     return _temp.toString();
                 } else return temperature;
             };
@@ -99,6 +98,8 @@ public class MainActivity extends AppCompatActivity {
                 } else return temperature;
             };
         });
-    }
+
+    };
+
 }
 
